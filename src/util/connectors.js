@@ -1,6 +1,10 @@
-import { Connect } from 'uport-connect'
+import { Connect, SimpleSigner } from 'uport-connect'
 
-export let uport = new Connect('TruffleBox')
+export let uport = new Connect('ownMyHealth', {
+  clientId: '2ozyVZgM5kVsfX42k1p4SX3LEfdkN5b5q6E',
+  signer: SimpleSigner('978bde73583864a7cb8a479530431a0657e44fce52f55bb97dec33787710c022')
+})
+
 export const web3 = uport.getWeb3()
 
 import ABI from './contract_abi.json'
